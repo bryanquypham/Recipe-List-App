@@ -9,12 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject var modellomas = RecipeModel()
+    @ObservedObject var models = RecipeModel()
     
     var body: some View {
       
         NavigationView {
-            List (modellomas.recipes) {r in
+            List (models.recipes) { r in
                 
                 NavigationLink(destination: RecipeDetailedView(recipe: r), label: {
                     

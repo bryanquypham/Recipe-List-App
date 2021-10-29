@@ -39,6 +39,17 @@ class DataService {
                 //@ unique ids
                 for r in recipeData{
                     r.id = UUID()
+                    
+                //but now that our JSON file was updated with new ingredients data/class, we need to add ids for ingredients too. Basically:
+                    //@ UNIQUE IDS TO INGREDIENTS
+                    
+                    //so for each recipe within the recipe loop (each iteration)... we're going to go through the ingredients too:
+                    
+                    //for each ingredient, inside the ingredients array, inside Recipes - set it's ID
+                    for i in r.ingredients {
+                        i.id = UUID()
+                        
+                    }
                 }
                 
                 //return the recipes

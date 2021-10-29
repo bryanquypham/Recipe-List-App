@@ -24,9 +24,11 @@ struct RecipeDetailedView: View {
                     .font(.title2)
                     .fontWeight(.semibold)
                     .padding(.vertical, 5)
-                ForEach (recipe.ingredients, id: \.self) {item in
+                
+                //with the update, we no longer need the id paramter, because ingredients is an identifiable object. We also added ".name" to item, because the item is now an ingredient
+                ForEach (recipe.ingredients) {item in
                     
-                    Text("-  " + item)
+                    Text("-  " + item.name)
                         
                 }
             }
