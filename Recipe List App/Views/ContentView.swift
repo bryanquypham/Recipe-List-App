@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject var models = RecipeModel()
+    @EnvironmentObject var models:RecipeModel
     
     var body: some View {
       

@@ -16,6 +16,7 @@
 		40CEB3F827264E3700ECCBF2 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CEB3F727264E3700ECCBF2 /* Recipe.swift */; };
 		40CEB3FA272650EC00ECCBF2 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CEB3F9272650EC00ECCBF2 /* RecipeModel.swift */; };
 		40CEB3FC272653AB00ECCBF2 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CEB3FB272653AB00ECCBF2 /* DataService.swift */; };
+		40F5DDD4272BA55B00D8B4C8 /* RecipeFeaturedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F5DDD3272BA55B00D8B4C8 /* RecipeFeaturedView.swift */; };
 		40FD497A2726932200041AC0 /* RecipeDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FD49792726932200041AC0 /* RecipeDetailedView.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		40CEB3F727264E3700ECCBF2 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		40CEB3F9272650EC00ECCBF2 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
 		40CEB3FB272653AB00ECCBF2 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		40F5DDD3272BA55B00D8B4C8 /* RecipeFeaturedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFeaturedView.swift; sourceTree = "<group>"; };
 		40FD49792726932200041AC0 /* RecipeDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				40B288AC272A41EF00ADEF2B /* RecipeTabView.swift */,
+				40F5DDD3272BA55B00D8B4C8 /* RecipeFeaturedView.swift */,
 				40CEB3E4272648E900ECCBF2 /* ContentView.swift */,
 				40FD49792726932200041AC0 /* RecipeDetailedView.swift */,
 			);
@@ -202,6 +205,7 @@
 				40CEB3E5272648E900ECCBF2 /* ContentView.swift in Sources */,
 				40CEB3E3272648E900ECCBF2 /* Recipe_List_App.swift in Sources */,
 				40CEB3FC272653AB00ECCBF2 /* DataService.swift in Sources */,
+				40F5DDD4272BA55B00D8B4C8 /* RecipeFeaturedView.swift in Sources */,
 				40B288AD272A41EF00ADEF2B /* RecipeTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
