@@ -17,8 +17,8 @@ struct ContentView: View {
             
             VStack (alignment: .leading) {
                 Text("All Recipes")
-                    .font(.largeTitle)
-                    .bold()
+                    .font(Font.custom("Avenir Heavy", size: 30))
+                    
                 
                 
                 ScrollView {
@@ -37,10 +37,10 @@ struct ContentView: View {
                                     
                                     VStack (alignment: .leading){
                                         Text(r.name)
-                                            .foregroundColor(.black)
-                                            .bold()
+                                            .font(Font.custom("Avenir Heavy", size: 16))
                                         RecipeHighlights(highlights: r.highlights)
                                             .foregroundColor(.black)
+                                            .font(Font.custom("Avenir", size: 15))
                                     }
                                     
                                 }
