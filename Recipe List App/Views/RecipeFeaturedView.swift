@@ -13,6 +13,8 @@ struct RecipeFeaturedView: View {
     
     @State var isDetailedViewShowing = false
     
+    @State var tabSelectionIndex = 0
+    
     var body: some View {
         
         VStack (alignment: .leading, spacing: 0) {
@@ -25,7 +27,7 @@ struct RecipeFeaturedView: View {
             
             GeometryReader { geo in
                         
-                TabView {
+                TabView (selection: $tabSelectionIndex) {
                             
                     //Loop through each recipe.
                     //We use ForEach here because we want a UI element to be listed(?? M4L7)
@@ -62,6 +64,7 @@ struct RecipeFeaturedView: View {
                                 }
                                 
                             })
+                                .tag(index)
                             //sheet = a button modifier - accepts 1 boolean parameter. True = show view, False = will hide the view. {} closure - to specify the view you wanna show. So we need to create a state variable for when we flip the boolean to true to false
                             //the variable = a binding. 2 way comm. Because when the user dismisses the card, we want the value to turn back into "false"
                             .sheet(isPresented: $isDetailedViewShowing){
@@ -85,16 +88,31 @@ struct RecipeFeaturedView: View {
                 
                 Text("Preparation Time")
                     .font(.headline)
-                Text("1 Hour")
+                Text(models.recipes[tabSelectionIndex].prepTime)
                 Text("Highlights")
                     .font(.headline)
-                Text("Healthy, Hearty, Easy")
+                RecipeHighlights(highlights: models.recipes[tabSelectionIndex].highlights)
                 
             }.padding(.leading)
         }
-        
+        //.onAppear modifier = when this vstack appears on the screen... we an perform the below code.
+        .onAppear(perform: {
+            setFeaturedRecipeIndex()
+        })
     }
+
+
+    func setFeaturedRecipeIndex() {
+        
+        //find index of the first recipe that is featured
+        var index = models.recipes.firstIndex { (recipe) -> Bool in
+            return recipe.featured
+        }
+        tabSelectionIndex = index ?? 0
+    }
+    
 }
+
 
 struct RecipeFeaturedView_Previews: PreviewProvider {
     static var previews: some View {
