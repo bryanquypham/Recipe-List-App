@@ -9,42 +9,60 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @EnvironmentObject var models:RecipeModel
+    @EnvironmentObject var model:RecipeModel
+    
+    private var title: String {
+        
+        if model.selectedCategory == nil || model.selectedCategory == Constants.defaultListFilter {
+            
+            return "All Recipes"
+        }
+        else {
+            return model.selectedCategory!
+            
+        }
+        
+    }
     
     var body: some View {
         
         NavigationView {
             
             VStack (alignment: .leading) {
-                Text("All Recipes")
+                Text(title)
                     .font(Font.custom("Avenir Heavy", size: 30))
-                    
+                
                 
                 
                 ScrollView {
                     LazyVStack (alignment: .leading) {
-                        ForEach (models.recipes) { r in
+                        ForEach (model.recipes) { r in
                             
-                            NavigationLink(destination: RecipeDetailedView(recipe: r), label: {
+                            if model.selectedCategory == nil || model.selectedCategory == Constants.defaultListFilter || model.selectedCategory != nil && r.category == model.selectedCategory {
                                 
-                                HStack(spacing: 20.0){
-                                    Image(r.image)
-                                        .resizable()
-                                        .scaledToFill()
-                                        .frame(width: 50, height: 50, alignment: .center)
-                                        .clipped()
-                                        .cornerRadius(5)
+                                NavigationLink(destination: RecipeDetailedView(recipe: r), label: {
                                     
-                                    VStack (alignment: .leading){
-                                        Text(r.name)
-                                            .font(Font.custom("Avenir Heavy", size: 16))
-                                        RecipeHighlights(highlights: r.highlights)
-                                            .foregroundColor(.black)
-                                            .font(Font.custom("Avenir", size: 15))
+                                    HStack(spacing: 20.0){
+                                        Image(r.image)
+                                            .resizable()
+                                            .scaledToFill()
+                                            .frame(width: 50, height: 50, alignment: .center)
+                                            .clipped()
+                                            .cornerRadius(5)
+                                        
+                                        VStack (alignment: .leading){
+                                            Text(r.name)
+                                                .font(Font.custom("Avenir Heavy", size: 16))
+                                            RecipeHighlights(highlights: r.highlights)
+                                                .foregroundColor(.black)
+                                                .font(Font.custom("Avenir", size: 15))
+                                        }
+                                        
                                     }
-                                    
-                                }
-                            })
+                                })
+                            }
+                            
+                            
                             
                         }
                     }

@@ -1,6 +1,7 @@
 [
     {
         "name": "Eggplant Parmesan",
+        "category": "Italian",
         "featured": false,
         "image" : "eggplant parmesan",
         "description": "Baked eggplant with bread crumbs and lots of cheese. Delicious!",
@@ -31,6 +32,7 @@
     },
     {
         "name": "Mushroom Risotto",
+        "category": "Italian",
         "featured": true,
         "image" : "mushroom risotto",
         "description": "Authentic Italian-style risotto cooked the slow and painful way, but oh so worth it. ",
@@ -65,6 +67,7 @@
     },
     {
         "name": "Baked Teriyaki Chicken",
+        "category": "Japanese",
         "featured": false,
         "image" : "chicken teriyaki",
         "description": "A sweet and savory favourite.",
@@ -96,6 +99,7 @@
     },
     {
         "name": "Lasagna",
+        "category": "Italian",
         "featured": false,
         "image" : "lasagna",
         "description": "Layers of goodness in this cheesy delight.",
@@ -139,6 +143,7 @@
     },
     {
         "name": "Pad Thai",
+        "category": "Thai",
         "featured": true,
         "image" : "pad thai",
         "description": "A delicious noodle dish!",
@@ -180,6 +185,7 @@
     },
     {
         "name": "Monterey Chicken",
+        "category": "American",
         "featured": true,
         "image" : "monterey chicken",
         "description": "Classic Monterey Chicken, worth the time!",
@@ -210,6 +216,7 @@
     },
     {
         "name": "Twice-baked potatoes",
+        "category": "American",
         "featured": false,
         "image" : "baked potato",
         "description": "A fantastic starchy side.",

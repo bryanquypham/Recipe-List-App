@@ -12,12 +12,24 @@ class RecipeModel: ObservableObject {
     
     @Published var recipes = [Recipe]()
     
+    //a set is for an unordered collection of unique elements -- unique ~ will filter out duplicates
+    @Published var categories = Set<String>()
+    
+    @Published var selectedCategory: String?
+    
     init () {
         
         //create an instance of DataService and get the data
         
         let service = DataService()
         self.recipes = service.getLocalData()
+    
+        
+        //we want an array of all the "category" strings
+        self.categories = Set(self.recipes.map { r in
+            return r.category
+        })//we are returning all of the categories of all of the recipes and passing it into a set, which will automatically filter out duplicate categories
+        self.categories.update(with: Constants.defaultListFilter)
     }
     
     

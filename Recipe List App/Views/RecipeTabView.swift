@@ -11,9 +11,11 @@ struct RecipeTabView: View {
     
     @EnvironmentObject var model:RecipeModel
     
+    @State var selectedTab = Constants.featuredTab
+    
     var body: some View {
         
-        TabView{
+        TabView (selection: $selectedTab) {
             
             RecipeFeaturedView()
                 .tabItem {
@@ -22,6 +24,16 @@ struct RecipeTabView: View {
                         Text("Featured")
                     }
                 }
+                .tag(Constants.featuredTab)
+            
+            RecipeCategoryView(selectedTab: $selectedTab)
+                .tabItem {
+                    VStack{
+                        Image(systemName: "square.grid.2x2")
+                        Text("Categories")
+                    }
+                }
+                .tag(Constants.categoriesTab)
                 
             
             ContentView()
@@ -31,6 +43,7 @@ struct RecipeTabView: View {
                         Text ("Recipe List")
                     }
                 }
+                .tag(Constants.listTab)
             
         }
         .environmentObject(RecipeModel())
